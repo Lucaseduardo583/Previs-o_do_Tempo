@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Previsão do Tempo</h1>
+        <input type="text" id="city-input" placeholder="Digite a cidade">
+        <button onclick="getWeather()">Buscar</button>
+
+        <div id="weather-info">
+            <p id="temperature">🌡 Temperatura: --</p>
+            <p id="wind">💨 Vento: --</p>
+            <p id="description">📌 Clima: --</p>
+        </div>
+
+        <div id="forecast-container"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
