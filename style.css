@@ -1,11 +1,20 @@
+/* Reset e Layout básico */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #4A90E2, #56CCF2);
+    min-height: 100vh;
     font-family: Arial, sans-serif;
-    margin: 0;
+    transition: background 0.5s ease-in-out;
+    background: linear-gradient(135deg, #4A90E2, #56CCF2);
 }
 
 .container {
@@ -15,8 +24,10 @@ body {
     text-align: center;
     width: 90%;
     max-width: 400px;
-    color: white;
+    color: black;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Adiciona scroll vertical se necessário */
+    max-height: 90vh; /* Limita a altura máxima do container */
 }
 
 input {
@@ -32,15 +43,22 @@ input {
 button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #FFD700;
+    background-color: #2eff04;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    margin-bottom: 10px;
 }
 
 button:hover {
-    background-color: #FFC107;
+    background-color: #b6ff71;
+}
+
+#location-info {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
 }
 
 #weather-info {
@@ -49,21 +67,64 @@ button:hover {
 }
 
 #forecast-container {
-    display: flex; 
-    justify-content: space-around; 
-    flex-wrap: wrap; 
-    margin-top: 15px; 
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 .forecast-item {
     background: rgba(255, 255, 255, 0.5);
-    margin: 10px; 
-    padding: 15px; 
+    margin: 10px;
+    padding: 10px;
     border-radius: 10px;
-    font-size: 16px; 
+    font-size: 16px;
     text-align: center;
     color: #333;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    flex: 1 0 30%; 
-    max-width: 150px; 
+    flex: 1 0 30%;
+    max-width: 150px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #2eff04;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #b6ff71;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    input, button {
+        width: 100%;
+    }
+
+    .forecast-item {
+        flex: 1 0 100%;
+        max-width: 100%;
+        margin: 5px;
+        padding: 8px;
+        font-size: 14px; /* Ajuste o tamanho da fonte para melhor legibilidade */
+    }
+
+    #weather-info, #location-info {
+        font-size: 14px; /* Ajuste o tamanho da fonte para melhor legibilidade */
+    }
 }

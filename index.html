@@ -3,23 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Previsão do Tempo</title>
+    <title>Previsão do Tempo por CEP</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="container">
-        <h1>🌤️ Previsão do Tempo</h1>
-        <input type="text" id="city-input" placeholder="Digite a cidade">
-        <button onclick="getWeather()">Buscar</button>
+        <h1>🌤️ Previsão do Tempo por CEP</h1>
+        <input type="text" id="cep-input" placeholder="Digite o CEP">
+        <button onclick="getLocationByCEP()">Buscar CEP</button>
+
+        <div id="location-info">
+            <p id="estado">🌎 Estado: --</p>
+            <p id="cidade">🏙️ Cidade: --</p>
+            <p id="rua">📍 Rua: --</p>
+            <p id="bairro">🏘️ Bairro: --</p>
+        </div>
+
+        <input type="text" id="city-input" placeholder="Cidade" readonly>
+        <button onclick="getWeather()">Buscar Previsão</button>
 
         <div id="weather-info">
             <p id="temperature">🌡 Temperatura: --</p>
             <p id="wind">💨 Vento: --</p>
             <p id="description">📌 Clima: --</p>
+            <i id="icone" class="bi bi-cloud"></i>
         </div>
 
         <div id="forecast-container"></div>
     </div>
+
+    <button id="back-to-top" onclick="scrollToTop()">Voltar ao Início</button>
+
     <script src="app.js"></script>
 </body>
 </html>
