@@ -28,6 +28,10 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     overflow-y: auto; /* Adiciona scroll vertical se necessário */
     max-height: 90vh; /* Limita a altura máxima do container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 input {
@@ -68,10 +72,10 @@ button:hover {
 
 #forecast-container {
     display: flex;
-    justify-content: space-around;
-    flex-grow: unset;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 15px;
-    padding: 50%;
+    padding: 20px 0;
 }
 
 .forecast-item {
@@ -85,6 +89,7 @@ button:hover {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     flex: 1 0 30%;
     max-width: 150px;
+    min-width: 150px;
 }
 
 #back-to-top {
