@@ -69,8 +69,9 @@ button:hover {
 #forecast-container {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-grow: unset;
     margin-top: 15px;
+    padding: 50%;
 }
 
 .forecast-item {
